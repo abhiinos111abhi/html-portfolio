@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: darkgray;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 0;
+            font-family: sans-serif;
+
+        }
+        button {
+            margin-top: 20px;
+            margin-bottom: 0;
+            width: 120px;
+            background-color: rgba(34, 14, 121, 0.582);
+            border: 0;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px 0px black;
+        }
+        button:active {
+            color: black;
+        }
+
+        div.container {
+            margin-top: 0;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            align-content: center;
+            position: relative;
+        }
+
+        div div {
+            width: 150px;
+            height: 150px;
+            transition: 0.1s;
+            /* visibility: hidden; */
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            visibility: visible;
+            position: absolute;
+            top: 300px;
+
+            z-index: -1;
+
+        }
+
+        img {
+            width: 100%;
+        }
+
+        div div:active {
+            transform: translateY(-100px);
+        }
+        .upper-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="upper-body">
+        <h1>Where is the ball?</h1>
+    <button onclick="shuffle()">shuffle the ball</button>
+    </div>
+    <div class="container">
+        <div class="ball"><img src="images/ball.png" alt="ball"></div>
+        <div class="red"><img src="images/red.png" alt="red cup"></div>
+        <div class="green"><img src="images/green.png" alt="green cup"></div>
+        <div class="blue"><img src="images/blue.png" alt="blue cup"></div>
+
+    </div>
+    <script>
+
+        
+        var pos = ["140px", "300px", "460px"];
+        function shuffle() {
+        var ball = document.getElementsByClassName("ball")[0];
+        var rand = Math.floor(Math.random() * 3);    
+        ball.style.left = pos[rand];
+        }
+
+
+
+    </script>
+</body>
+
+</html>
